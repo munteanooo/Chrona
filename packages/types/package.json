@@ -2,11 +2,6 @@
   "name": "@chrona/types",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "tsc",
-    "lint": "eslint ."
-  },
-  "dependencies": {},
-  "devDependencies": {}
+  "main": "./src/index.ts",
+  "types": "./src/index.ts"
 }
