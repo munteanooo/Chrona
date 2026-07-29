@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  transpilePackages: [
+    "@chrona/ui",
+    "@chrona/types",
+  ],
 };
 
 export default nextConfig;

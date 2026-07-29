@@ -1,8 +1,10 @@
-export default function HomePage() {
+export default function MarketingPage() {
   return (
     <main>
       <h1>Chrona</h1>
-      <p>Organize your tasks, calendar and life.</p>
+      <p>
+        Organize your tasks, projects and time in one place.
+      </p>
     </main>
   );
 }
