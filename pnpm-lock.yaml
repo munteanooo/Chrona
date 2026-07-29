@@ -214,6 +214,16 @@ importers:
         specifier: ^7.0.2
         version: 7.0.2
 
+  apps/api: {}
+
+  apps/web: {}
+
+  packages/config: {}
+
+  packages/types: {}
+
+  packages/ui: {}
+
 packages:
 
   '@turbo/darwin-64@2.10.7':
