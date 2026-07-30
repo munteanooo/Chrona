@@ -1,17 +1,36 @@
-import { Button, Card } from "@chrona/ui";
+import type { Task } from "@chrona/types";
 
-export default function DashboardPage() {
+async function getTasks(): Promise<Task[]> {
+  const response = await fetch("http://localhost:3001/tasks", {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch tasks");
+  }
+
+  return response.json();
+}
+
+export default async function DashboardPage() {
+  const tasks = await getTasks();
+
   return (
     <main>
       <h1>Dashboard</h1>
 
-      <Card>
-        <p>Chrona Task</p>
+      <div>
+        {tasks.map((task) => (
+          <div key={task.id}>
+            <h2>{task.title}</h2>
 
-        <Button>
-          Create Task
-        </Button>
-      </Card>
+            <p>
+              Status:{" "}
+              {task.completed ? "Completed" : "Pending"}
+            </p>
+          </div>
+        ))}
+      </div>
     </main>
   );
 }
